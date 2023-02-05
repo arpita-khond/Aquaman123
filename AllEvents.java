@@ -46,7 +46,7 @@ public class AllEvents extends AppCompatActivity {
         myAdapter = new MyAdapter2(this, list);
         recyclerView.setAdapter(myAdapter);
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Events");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Events"); // comment added seperately
         mAuth = FirebaseAuth.getInstance();
         String userID = mAuth.getCurrentUser().getUid();
         reference.addValueEventListener(new ValueEventListener() {
